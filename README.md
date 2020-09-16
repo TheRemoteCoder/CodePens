@@ -17,14 +17,12 @@
 Source for CodePen publications for internal purposes.
 The collection here allows for quality control like IDE linting.
 
-### Curious?
-
-View the code at [CodePen](https://codepen.io/TheRemoteCoder/).
-
-
 <br><br>
+
 
 ## Projects
 
-- ...
+Curious?
+
+View the code at [CodePen](https://codepen.io/TheRemoteCoder/).
 
