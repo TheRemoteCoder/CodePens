@@ -1,0 +1,7 @@
+canvas#canvas(width='640' height='480')
+
+svg
+  filter#filter(x='0' y='0' width='100%' height='100%' filterunits='objectBoundingBox')
+    feoffset(dx='0' dy='0' result='offset' in='SourceGraphic')
+      feturbulence(basefrequency='0.13' numoctaves='1' result='turbulence' type='turbulence')
+        fedisplacementmap(scale='16' in='offset' in2='turbulence' xchannelselector='R' ychannelselector='G')
