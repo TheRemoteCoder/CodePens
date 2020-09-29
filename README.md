@@ -4,7 +4,6 @@
 
 - [About](#about)
 - [Projects](#projects)
-- [License »](/LICENSE.md)
 
 <br>
 
