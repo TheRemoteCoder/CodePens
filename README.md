@@ -1,4 +1,4 @@
-![Header](assets/header.png)
+![CodePens](teaser.png)
 
 # CodePen publication sources
 
@@ -18,10 +18,8 @@ The collection here allows for quality control like IDE linting.
 
 <br><br>
 
-
 ## Projects
 
 Curious?
 
-View the code at [CodePen](https://codepen.io/TheRemoteCoder/).
-
+View the code at [CodePen](https://codepen.io/TheRemoteCoder).
