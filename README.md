@@ -3,7 +3,7 @@
 # CodePen publication sources
 
 - [About](#about)
-- [Projects](#projects)
+- [Features](#features)
 
 <br>
 
@@ -18,8 +18,8 @@ The collection here allows for quality control like IDE linting.
 
 <br><br>
 
-## Projects
+## Features
 
-Curious?
+Curious about the projects?
 
 View the code at [CodePen](https://codepen.io/TheRemoteCoder).
