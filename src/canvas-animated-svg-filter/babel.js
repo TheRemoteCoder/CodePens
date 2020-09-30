@@ -2,18 +2,17 @@ window.onload = () => {
   'use strict';
 
   const canvas = document.getElementById('canvas');
-  const ctx    = canvas.getContext('2d');
+  const ctx = canvas.getContext('2d');
 
-  const effectBlur         = document.querySelector('filter feGaussianBlur');
+  const effectBlur = document.querySelector('filter feGaussianBlur');
   const effectDisplacement = document.querySelector('filter feDisplacementMap');
-  const effectOffset       = document.querySelector('filter feOffset');
+  const effectOffset = document.querySelector('filter feOffset');
 
-  const centerX    = canvas.width  / 2;
-  const centerY    = canvas.height / 2;
+  const centerX = canvas.width / 2;
+  const centerY = canvas.height / 2;
   let offsetFactor = 0;
-  let radians      = 0;
+  let radians = 0;
   let i = 0;
-
 
   // Bad math - Values are ok for this screen size.
   // Moving mouse to center (on X) increases factor; boundaries will become close to 0.
@@ -21,17 +20,16 @@ window.onload = () => {
   // - Scale factor determines max. possible result
   // - Higher offset will cancel out with scale factor and become close to 0
   canvas.addEventListener('mousemove', (event) => {
-    const offset      = (event.offsetX - centerX) / 100;
-    const scaleFactor = (centerX / 100);
+    const offset = (event.offsetX - centerX) / 100;
+    const scaleFactor = centerX / 100;
 
-    offsetFactor = Math.abs((Math.abs(offset) - scaleFactor));
+    offsetFactor = Math.abs(Math.abs(offset) - scaleFactor);
   });
-
 
   // Can be artificially delayed for better visibility:
   // Render every N-th frame only.
-  function loop () {
-    const renderFrame = (i === 0 || i % 1 === 0);
+  function loop() {
+    const renderFrame = i === 0 || i % 1 === 0;
 
     if (renderFrame) {
       update();
@@ -43,8 +41,7 @@ window.onload = () => {
     i++;
   }
 
-
-  function update () {
+  function update() {
     let scale = effectDisplacement.getAttribute('scale');
 
     // Effect size
@@ -59,18 +56,16 @@ window.onload = () => {
     effectDisplacement.setAttribute('scale', scale);
   }
 
-
-  function reset () {
+  function reset() {
     ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
 
     ctx.fillRect(0, 0, canvas.width, canvas.height);
   }
 
-
-  function draw () {
+  function draw() {
     ctx.save();
 
-    ctx.lineWidth   = 24;
+    ctx.lineWidth = 24;
     ctx.strokeStyle = 'rgba(255, 192, 0, 1)';
 
     ctx.translate(centerX, centerY);
@@ -82,9 +77,6 @@ window.onload = () => {
     ctx.restore();
   }
 
-
   // Start with initial call
   loop();
-
 };
-
