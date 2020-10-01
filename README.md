@@ -22,4 +22,4 @@ The collection here allows for quality control like IDE linting.
 
 Curious about the projects?
 
-View the code at [CodePen](https://codepen.io/TheRemoteCoder).
+- View code: [CodePen](https://codepen.io/TheRemoteCoder)
