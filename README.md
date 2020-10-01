@@ -14,7 +14,7 @@
 ## About
 
 Source for CodePen publications for internal purposes.
-This collection aids quality control like IDE linting.
+This collection is intended for quality control like IDE linting.
 
 <br><br>
 
