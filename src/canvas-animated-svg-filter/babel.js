@@ -1,3 +1,4 @@
+// @flow
 window.onload = () => {
   'use strict';
 
