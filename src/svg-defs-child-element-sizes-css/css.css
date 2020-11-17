@@ -1,0 +1,17 @@
+:root {
+  --size: 200px;
+}
+
+svg {
+  width: var(--size);
+  height: var(--size);
+}
+
+image {
+  width: var(--size);
+  height: var(--size);
+}
+
+rect {
+  font-size: var(--size);
+}

@@ -1,0 +1,64 @@
+:root {
+  /**
+   * Values are based on the background images aspect ratio
+   * and its width of 50% viewport size (50vw).
+   */
+  --ar-1: 16.6666666667vw; /* 50vw / 3 */
+  --ar-3: calc(var(--ar-1) * 3); /* 50.0000000001vw */
+  --ar-4: calc(var(--ar-1) * 4); /* 66.6666666668vw */
+}
+
+/* LAYOUT */
+
+html,
+body {
+  background: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  /* Aspect ratio - 3:4 */
+  background: url('https://picsum.photos/960/1280') no-repeat 100% 0;
+  background-origin: border-box;
+  background-size: var(--ar-3);
+}
+
+.col {
+  --text-column-gap: 1%;
+
+  box-sizing: border-box;
+  padding: calc(var(--text-column-gap) * 2);
+  margin: 0 0 calc(var(--text-column-gap) * 4);
+}
+
+.aspect-ratio--3-4 {
+  width: var(--ar-3);
+
+  /* Deliberately allow overflowing text */
+  min-height: var(--ar-4);
+}
+
+/* CONTENT */
+
+.text-higlight {
+  background: #f3f3f3;
+}
+
+.text-columns {
+  columns: 3;
+  column-gap: 1.3rem;
+  column-rule: 0.125rem solid #fff;
+}
+
+.text-body {
+  font-family: system-ui;
+  font-size: 1rem;
+  line-height: 1.3rem;
+}
+
+.text-head {
+  font-family: system-ui;
+  font-size: clamp(1rem, 2vw, 2rem);
+  line-height: 150%;
+}
