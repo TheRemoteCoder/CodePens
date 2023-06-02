@@ -9,8 +9,6 @@
 
 ---
 
-<br><br>
-
 ## About
 
 Source for CodePen publications for internal purposes.
