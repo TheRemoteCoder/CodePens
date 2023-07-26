@@ -1,0 +1,65 @@
+/**
+ * Alternative animation for native HTML 5 elements and Bootstrap collapse, when height animation is not possible.
+ * Gives UI a smoother look and fits the other UI elements. Timing is set to 2x Bootstrap native animation speed.
+ *
+ * Why animation (vs. transition)?
+ * - As of 2023-06, transition seems to have an issue with 'display' state changes and wouldn't work at all (tested as breaking in Windows Opera, potentially others).
+ */
+
+details .accordion-body,
+.collapse {
+  animation: 0.75s ease forwards paused fade;
+}
+
+details[open] .accordion-body,
+.collapse.show {
+  animation-play-state: running;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/**
+ * - Enforce cursor style (otherwise depends on HTML element).
+ * - Avoid unwanted text selection, e.g. on double clicks.
+ */
+.accordion-button {
+  cursor: pointer;
+  user-select: none;
+}
+
+/**
+ * 1:1 Bootstrap copy, using its variables.
+ */
+.accordion-button:hover,
+.accordion-button:focus {
+  color: var(--bs-accordion-active-color);
+  background-color: var(--bs-accordion-active-bg);
+  box-shadow: inset 0 calc(-1 * var(--bs-accordion-border-width)) 0 var(--bs-accordion-border-color);
+}
+
+
+/* LAYOUT */
+
+* {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #FFF;
+  display: grid;
+  place-items: center;
+}
+
+main {
+  width: 90%;
+}
+

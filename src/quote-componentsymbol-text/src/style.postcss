@@ -1,0 +1,59 @@
+/* Page */
+
+.container {
+  display: flex;
+  margin: 1rem; 
+  gap: 2rem;
+  container-name: quote-container;
+}
+
+/* Quote / Symbol */
+
+.quote * {
+  --size: 25cqw;
+  --distance: calc(var(--size) / 8);
+  --distance-mobile: calc(var(--size) / 12);
+
+  font-family: system-ui, sans-serif;
+  font-size: var(--size);
+  font-weight: 600;
+  line-height: var(--distance);
+  text-align: right;
+
+  /* Choose what works better */
+  margin-top: calc(var(--distance) * 2);
+  /* * /
+  position: relative;
+  top: var(--distance);
+  /* */
+}
+
+/* Quote / Text */
+
+.text {
+  font-size: 1.5rem;
+  font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 1000px) {
+  .container {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .quote * {
+    text-align: center;
+    margin-bottom: var(--distance-mobile);
+  }
+}
+
+
+/* COLORS */
+
+body { background: linen; }
+.quote { color: gold; }
+.text { color: purple; }
+

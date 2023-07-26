@@ -1,0 +1,124 @@
+<main class="m-5">
+  <h1 class="h2">Custom Bootstrap accordion markups</h1>
+  <p>Read the <a href="#--about">about</a> section for intention and use cases.</p>
+  <hr />
+  <br />
+
+  <h2 class="h3 mb-4">Details / Summary</h2>
+  <p>
+    Native HTML 5 + JS to trigger / display. Own code only for class visuals.
+    <em>As of 2023-06, there's no native height animation yet.</em>
+  </p>
+
+  <p>Details/ summary solution reduces complexity, but might not work everywhere: Tags might be sanitized or replaced.</p>
+
+  <details class="js-accordion accordion accordion-item">
+    <summary class="accordion-button user-select-none collapsed">Custom HTML</summary>
+    <div class="accordion-body">
+      <h3 class="h4">Complex markup</h3>
+      <ul>
+        <li>Any <a href="#">HTML</a></li>
+      </ul>
+      <input type="text" placeholder="Text" class="form-control d-inline w-50" />
+      <button type="submit" class="btn btn-secondary">Submit</button>
+    </div>
+  </details>
+  <details class="js-accordion accordion accordion-item">
+    <summary class="accordion-button user-select-none collapsed">Deep nesting</summary>
+    <div class="accordion-body">
+      <p>Simple text</p>
+      <br />
+      <details class="js-accordion accordion accordion-item">
+        <summary class="accordion-button user-select-none collapsed">Nested toggle 1</summary>
+        <div class="accordion-body">
+          <p>Nested content 1</p>
+          <details class="js-accordion accordion accordion-item">
+            <summary class="accordion-button user-select-none collapsed">Nested toggle 2</summary>
+            <div class="accordion-body">
+              <p>Simple text</p>
+            </div>
+          </details>
+        </div>
+      </details>
+    </div>
+  </details>
+
+  <br />
+  <br />
+
+  <h2 class="h3 mb-4">Bootstrap Accordion (Workaround)</h2>
+  <p>Custom JS: Any count of accordions can be triggered. Size and content don't matter here, as there's no animation.</p>
+
+  <p>Buttons as 'div' should be safe to use in almost every environment.</p>
+
+  <div class="js-accordion accordion mb-2">
+    <div class="accordion-item">
+      <div class="accordion-button collapsed h2 mb-0">1. Simple (short)</div>
+      <div class="accordion-collapse collapse">
+        <div class="accordion-body">Simple text</div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <div class="accordion-button collapsed h2 mb-0">1. Toggle (long)</div>
+      <div class="accordion-collapse collapse">
+        <div class="accordion-body">
+          Long text <br />
+          ... <br />
+          ... <br />
+          ... <br />
+          ... <br />
+          ... <br />
+          ... <br />
+          ... <br />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p>Less compatibility: Buttons as `button` element might be stripped or replaced.</p>
+
+  <div class="js-accordion accordion mb-5">
+    <div class="accordion-item">
+      <button class="accordion-button collapsed h2 mb-0" type="button">2. Deep nesting</button>
+      <div class="accordion-collapse collapse">
+        <div class="accordion-body">
+          <p>Nested accordion 1:</p>
+          <div class="js-accordion accordion">
+            <div class="accordion-item">
+              <button class="accordion-button collapsed h2 mb-0" type="button">Nested toggle 1</button>
+              <div class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  <p>Nested accordion 2:</p>
+                  <div class="js-accordion accordion">
+                    <div class="accordion-item">
+                      <button class="accordion-button collapsed h2 mb-0" type="button">Nested toggle 2</button>
+                      <div class="accordion-collapse collapse">
+                        <div class="accordion-body">Simple text</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <small class="d-block mt-3">
+            Simplify nested HTML? An accordion item without its container would break CSS and JS, so it's not supported or suggested.
+          </small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr />
+
+  <h2 id="--about" class="h3">About</h2>
+  <p>
+    Alternatives to Bootstrap's `data`-driven solution, that offer pure styling and toggling. For simplicity without the height
+    animation. This is just about functionality, to use in any system that is not fully compatible with Bootstrap. Example real world
+    use case: Inserting accordions as HTML in CMS editors, that might sanitize `data` attributes. This would break the native accordion
+    functionality.
+  </p>
+  <p>
+    Bootstrap's animation is replaced by a simple fade, for simplicity and portability of the codebase. The original is quite complex, as it uses an intermediate stateful class to change display and set the content height. The height must be calculated in pixels. Percentage-based or max-height solutions don't work in animations and transitions.
+  </p>
+</main>

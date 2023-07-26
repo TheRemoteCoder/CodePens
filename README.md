@@ -1,9 +1,8 @@
-![CodePens](teaser.png)
+[![CodePens](teaser.png)](https://codepen.io/TheRemoteCoder)
 
 # CodePen publication sources
 
 - [About](#about)
-- [Features](#features)
 
 <br>
 
@@ -11,13 +10,6 @@
 
 ## About
 
-Source for CodePen publications for internal purposes.
-This collection is intended for quality control like IDE linting.
+Sources for [CodePen](https://codepen.io/TheRemoteCoder) publications for internal and backup purposes.
 
-<br><br>
-
-## Features
-
-Curious about the projects?
-
-- View code: [CodePen](https://codepen.io/TheRemoteCoder)
+1:1 Exports from CodePen, unzipped for readability.

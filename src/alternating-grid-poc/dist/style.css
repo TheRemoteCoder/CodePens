@@ -1,0 +1,19 @@
+.container {
+  display: grid;
+}
+
+.-h { grid-template-columns: repeat(12, 1fr); }
+.-v { grid-template-rows: repeat(12, 1fr); }
+
+.-s { grid-column: 1 / span 6; }
+.-e { grid-column: 6 / span 6; }
+.-t { grid-row: 1 / span 6; }
+.-b { grid-row: 6 / span 6; }
+
+.box {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  background: #999;
+  height: 4rem;
+}

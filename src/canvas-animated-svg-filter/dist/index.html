@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Canvas + Animated SVG filter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://codepen.io/TheRemoteCoder/pen/eYzbWvm.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<canvas id="canvas" width="640" height="480"></canvas>
+
+<svg>
+  <filter id="filter" x="0" y="0" width="100%" height="100%" filterUnits="objectBoundingBox">
+    <feOffset dx="0" dy="0" result="offset" in="SourceGraphic" />
+    <feTurbulence baseFrequency="0.13" numOctaves="1" result="turbulence" type="turbulence" />
+    <feDisplacementMap scale="16" in="offset" in2="turbulence" xChannelSelector="R" yChannelSelector="G" />
+  </filter>
+</svg>
+
+<main>
+  <p>
+    Move mouse over canvas on X-axis for effect change.
+  </p>
+
+  <p>
+    Demonstration of SVG filters applied to an 2D canvas. This allows to combine high-performance effects with the slower CPU-heavy 2D canvas.
+  </p>
+</main>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>

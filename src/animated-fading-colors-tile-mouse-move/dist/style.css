@@ -1,0 +1,29 @@
+:root {
+  --cc-color-deg: 0;
+  --cc-color-text: #000;
+}
+
+.tile {
+  color: var(--cc-color-text);
+  background: hsla(var(--cc-color-deg), 25%, 97%, 1);
+  text-decoration: none;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem 1rem;
+  border-radius: 0.1rem;
+  transition: background 5s, scale 30s;
+  transition-timing-function: cubic-bezier(0, 1.25, 0.75, 1.25);
+  scale: 0.99;
+  z-index: 1;
+}
+
+.tile:hover {
+  background: #dbe0f6;
+  background: hsla(var(--cc-color-deg), 60%, 75%, 1);
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 0 1rem 0 hsla(var(--cc-color-deg), 25%, 75%, 0.5);
+  scale: 1.1;
+  z-index: 2 !important;
+}

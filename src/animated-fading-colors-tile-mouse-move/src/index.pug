@@ -1,0 +1,9 @@
+- var n = 0;
+- var max = 6 * 6;
+
+main.container.text-center
+  section#fx.cc-list.d-flex.flex-wrap.text-center
+    while n < max
+      - var item = n.toString().padStart(2, '0') + '.'
+      div.col-1.col-md-2.tile= item
+      - n++

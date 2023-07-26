@@ -1,0 +1,51 @@
+/* HEXAGONS */
+
+:root {
+  --hexagon-width: 200px;
+  --hexagon-height: 230px;
+
+  /* Using a CSS variable for this might not work in all browsers yet */
+  --hexagon: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+}
+
+.hexagon {
+  -webkit-clip-path: var(--hexagon);
+  clip-path: var(--hexagon);
+
+  /* Alternative display: Less accurate, but prevents showing streaks at the corners, that might occur due to rounding issues in some cases * /
+  clip-path: polygon(50% 0, 99.75% 24.75%, 99.75% 74.75%, 50% 99.75%, 0% 74.75%, 0.25% 25.25%);
+  /* */
+}
+
+/* CONTENT */
+
+/* 1. */
+img {
+  width: var(--hexagon-width);
+  height: var(--hexagon-height);
+}
+
+/* 2. */
+.div {
+  background: url('https://picsum.photos/230/230');
+  width: var(--hexagon-width);
+  height: var(--hexagon-height);
+  margin: 2%;
+  
+  /* Fix CodePen flex layout - not a concern here */
+  flex-shrink: 0;
+}
+
+svg {
+  width: var(--hexagon-width);
+  height: var(--hexagon-height);
+}
+
+/* PAGE */
+
+body {
+  background: #FAFAFA;
+  display: grid;
+  place-items: center;
+  padding: 2%;
+}
