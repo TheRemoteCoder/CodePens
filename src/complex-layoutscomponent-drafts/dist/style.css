@@ -1,0 +1,1288 @@
+/* ====================================================================================================================================== */
+/* ============================================================================================================================== CONTENT */
+/* ====================================================================================================================================== */
+
+/* ### Fixed header */
+
+/**
+ * This won't become larger than its container (body),
+ * even with tricks like shifting it to a side and oversizing
+ */
+.item-fixed {
+  top: 0;
+  left: 0;
+  z-index: 3;
+}
+
+/* -------------------------------------------------------------------------------------------------------- */
+
+/* ### Nested containers */
+
+/* Replicated Bootstrap behaviour with minimal settings */
+.item-containers.-cc {
+}
+
+.item-containers .-cr > * {
+  flex-shrink: 0;
+}
+
+.item-containers .-c {
+  background: #999;
+  width: 150%;
+
+  /* Override Bootstrap .row setting */
+  max-width: inherit;
+}
+
+/* -------------------------------------------------------------------------------------------------------- */
+
+/* ### Popout */
+
+.item-popout {
+  position: relative;
+}
+
+.item-popout .-pr {
+  position: relative;
+}
+
+.item-popout .-p {
+  background: #999;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+}
+
+.item-popout .-p1 {
+  right: 25px;
+  top: -25px;
+}
+
+.item-popout .-p2 {
+  right: -25px;
+  bottom: -25px;
+}
+
+/* -------------------------------------------------------------------------------------------------------- */
+
+/* ### Roadmaps / Timelines */
+
+/* Vertical */
+
+.item-tv .item {
+  position: relative;
+  margin-bottom: 20px;
+  padding-left: 75px;
+}
+
+.item-tv .item::before {
+  content: "";
+  background: #999;
+  width: 50px;
+  height: 10px;
+  position: absolute;
+  left: -5px;
+  top: -5px;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+/* ------------------------------------------------------ */
+
+/* Horizontal + Grid 2 - Offset - Mobile */
+
+/* Issue: Hardcoded values */
+.item-thg2om .-o1 {
+  order: 1;
+}
+.item-thg2om .-o2 {
+  order: 2;
+}
+.item-thg2om .-o3 {
+  order: 3;
+}
+.item-thg2om .-o4 {
+  order: 4;
+}
+.item-thg2om .-o5 {
+  order: 5;
+}
+.item-thg2om .-o6 {
+  order: 6;
+}
+.item-thg2om .-o7 {
+  order: 7;
+}
+.item-thg2om .-o8 {
+  order: 8;
+}
+.item-thg2om .-o9 {
+  order: 9;
+}
+.item-thg2om .-o10 {
+  order: 10;
+}
+
+/* ------------------------------------------------------ */
+
+/* Horizontal + Grid 2 - Offset - Desktop */
+
+.item-thg2o {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.item-thg2o .d-grid {
+  width: calc(20% * 6);
+  grid-template-columns: repeat(11, 1fr);
+  overflow-x: scroll;
+}
+
+.item-thg2o .item {
+  grid-column: span 2;
+}
+
+/* Issue: Hardcoded values */
+.item-thg2o .item.-b1 {
+  grid-column: 2 / span 2;
+}
+.item-thg2o .item.-b2 {
+  grid-column: 4 / span 2;
+}
+.item-thg2o .item.-b3 {
+  grid-column: 6 / span 2;
+}
+.item-thg2o .item.-b4 {
+  grid-column: 8 / span 2;
+}
+.item-thg2o .item.-b5 {
+  grid-column: 10 / span 2;
+}
+
+/* ------------------------------------------------------ */
+
+/* Horizontal + Grid 2 - Offset - Desktop (Full) */
+
+.item-thg2of {
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+/**
+ * Formulas
+ *
+ * Setup
+ * - Specs
+ *   - Columns           = 11
+ *   - Items/Row         = 5
+ *   - Offset            = 1 (2 x 0.5)
+ *   - Items space / Row = 5.5
+ *
+ * width
+ * - Total grid with including all items (scrollable)
+ *   - N% = Item width
+ *   - *N = Stretch items
+ *
+ * repeat
+ * - Desired visible columns * 2 + 1)
+ *   - ^= Total content + 1
+ *   - +1 Needed for offset
+ */
+.item-thg2of .d-grid {
+  /* Demo examples */
+  width: calc(20% * 6);
+  width: calc(30% * 5.5);
+
+  grid-template-columns: repeat(11, 1fr);
+  /* overflow-x: scroll; */
+}
+
+/* Items */
+
+.item-thg2of .item {
+  grid-column: span 2;
+  min-height: 150px;
+
+  /* Don't set width here, it breaks scroll ability */
+  /* min-width: 200px; */
+}
+
+/* Issue: Hardcoded values */
+.item-thg2of .item.-b1 {
+  grid-column: 2 / span 2;
+}
+.item-thg2of .item.-b2 {
+  grid-column: 4 / span 2;
+}
+.item-thg2of .item.-b3 {
+  grid-column: 6 / span 2;
+}
+.item-thg2of .item.-b4 {
+  grid-column: 8 / span 2;
+}
+.item-thg2of .item.-b5 {
+  grid-column: 10 / span 2;
+}
+
+/* Borders */
+
+.item-thg2of .-r0 {
+  border-bottom: 10px solid #999;
+}
+.item-thg2of .-r1 {
+  border-top: 10px solid #999;
+  margin-top: -10px;
+}
+
+/* Gradients */
+
+.item-thg2of .item {
+  position: relative;
+}
+
+.item-thg2of .item::before {
+  content: "";
+  background: #999;
+  width: 10px;
+  height: 50px;
+  position: absolute;
+  background: linear-gradient(0, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.item-thg2of .-r0::before {
+  left: -5px;
+  bottom: -10px;
+}
+
+.item-thg2of .-r1::before {
+  left: -5px;
+  top: -10px;
+  transform: rotate(180deg);
+}
+
+/* Text */
+
+.item-thg2of .-d {
+  position: absolute;
+  text-align: center;
+  width: 25%;
+}
+
+.item-thg2of .-r1 .-d {
+  left: calc(-50% / 4);
+  top: 40px;
+}
+.item-thg2of .-r0 .-d {
+  left: calc(-50% / 4);
+  bottom: 40px;
+}
+
+/* Spacer */
+
+.item-thg2of .-empty::before,
+.item-thg2of .-empty::after {
+  background: none;
+}
+
+/* ------------------------------------------------------ */
+
+/* Horizontal + Grid 2 - Mobile */
+
+.item-thg2m .item {
+  width: 50%;
+}
+
+.item-thg2m .item.-fe {
+  justify-self: flex-end;
+}
+
+/* ------------------------------------------------------ */
+
+/* Horizontal + Grid 2 - Desktop */
+
+.item-thg2 {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+/**
+ * Columns = Item count / Desired columns.
+ * Here: 10/2 = 5
+ */
+.item-thg2 .d-grid {
+  overflow-x: scroll;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  /* Columns = Item count / Desired columns */
+  grid-template-columns: repeat(5, 1fr);
+  align-items: start;
+}
+
+.item-thg2 .d-grid .item {
+  /* Todo: Find flexible value - % does not work */
+  /* ^= 2 visible */
+  min-width: 339px;
+}
+
+/* Variant - auto-size */
+
+/**
+ * 2 columns @ 50% container width, for a total of 5 items.
+ */
+.item-thg2 .d-grid {
+  /* Issue: Shows part of 3rd item (padding size area);
+     but might be desired for UX reasons */
+  width: calc((100% / 2) * 5);
+
+  /* Optional: Move next item out of screen;
+     extra pixels = padding + borders? * /
+  width: calc((100% / 2) * 5 + 33px);
+  /**/
+}
+
+.item-thg2 .d-grid .item {
+  min-width: inherit;
+}
+.item-thg2 .d-grid .item.-s {
+  min-width: inherit;
+}
+
+/* Gradients + Borders */
+
+.item-thg2 .-z .item {
+  position: relative;
+}
+
+.item-thg2 .-z .item::before {
+  content: "";
+  background: #999;
+  width: 10px;
+  height: 50px;
+  position: absolute;
+  background: linear-gradient(0, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.item-thg2 .-z .item.-t {
+  border-top: 10px solid #999;
+}
+
+.item-thg2 .-z .item.-b {
+  border-bottom: 10px solid #999;
+}
+
+.item-thg2 .-z .item.-t::before {
+  left: -5px;
+  top: -10px;
+  transform: rotate(180deg);
+}
+
+.item-thg2 .-z .item.-b::before {
+  left: -5px;
+  bottom: -10px;
+}
+
+.item-thg2 .-d {
+  position: absolute;
+  text-align: center;
+  width: 25%;
+}
+
+.item-thg2 .-t .-d {
+  left: calc(-50% / 4);
+  top: 40px;
+}
+.item-thg2 .-b .-d {
+  left: calc(-50% / 4);
+  bottom: 40px;
+}
+
+/* ------------------------------------------------------ */
+
+/* Horizontal + Grid 1 */
+
+.item-thg .d-grid {
+  overflow-x: scroll;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  /* * /
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 50px);
+  grid-template-rows: min-content;
+  /* */
+  /* grid-auto-rows: 100px; */
+  grid-auto-flow: column;
+  align-items: start;
+  gap: 10px;
+  /* * /
+  align-content: space-between;
+  justify-content: space-around;
+  /* */
+}
+
+.item-thg .d-grid .item {
+  min-width: 300px;
+  min-height: 100px;
+  /* * /
+  align-self: center;
+  justify-self: center;
+  /* */
+}
+
+/* ------------------------------------------------------ */
+
+/* Horizontal */
+
+.item-th {
+  overflow-x: scroll;
+  padding: 1rem 2rem;
+}
+
+/* Does not work properly ... */
+/* .item-th .row :last-child { margin-right: 10px; } */
+/* .item-th .row :first-child { margin-left: 10px; } */
+
+.item-th .-z {
+  overflow: visible;
+  height: 300px;
+}
+
+.item-th .-z .item {
+  position: relative;
+  width: 33.34%;
+  height: 150px;
+}
+
+.item-th .-z .align-self-end {
+  top: -10px;
+}
+
+.item-th .-z .item::before {
+  content: "";
+  background: #999;
+  width: 10px;
+  height: 50px;
+  position: absolute;
+  background: linear-gradient(0, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.item-th .-z .item.-t {
+  border-top: 10px solid #999;
+}
+
+.item-th .-z .item.-b {
+  border-bottom: 10px solid #999;
+}
+
+.item-th .-z .item.-t::before {
+  left: -5px;
+  top: -10px;
+  transform: rotate(180deg);
+}
+
+.item-th .-z .item.-b::before {
+  left: -5px;
+  bottom: -10px;
+}
+
+.item-th .-d {
+  position: absolute;
+  text-align: center;
+  width: 25%;
+}
+
+.item-th .-t .-d {
+  left: calc(-50% / 4);
+  top: 40px;
+}
+.item-th .-b .-d {
+  left: calc(-50% / 4);
+  bottom: 40px;
+}
+
+/* ------------------------------------------------------ */
+
+/* Old */
+
+.item-r .-s {
+  overflow-x: scroll;
+}
+
+.item-r .-c {
+  min-height: 200px;
+}
+
+.item-r .-i1 {
+  /* Percent of original container width = Great for visible tiles */
+  min-width: calc(100% / 5);
+}
+
+.item-r .-i2 {
+  /* Min. 3 columns (Todo: Fix max size issue?) */
+  min-width: clamp(calc(100% / 3), calc(100% / 5), 500px);
+}
+
+.item-r .-ix {
+  position: relative;
+}
+.item-r .-ix::before {
+  content: "";
+  background: rgba(0, 0, 0, 0.25);
+  position: absolute;
+  left: -10px;
+  bottom: 0;
+  width: 20px;
+  height: 50%;
+}
+
+.item-r .--t {
+  position: relative;
+}
+.item-r .--t::before {
+  bottom: inherit;
+  left: -10px;
+  top: 0;
+}
+
+/* -------------------------------------------------------------------------------------------------------- */
+
+.item-ta .-g {
+  width: 50%;
+  aspect-ratio: 1 / 1;
+}
+
+/* -------------------------------------------------------------------------------------------------------- */
+
+/* ### Specs - List */
+
+.item-ais-list .-ic {
+  width: 50%;
+  aspect-ratio: 1 / 1;
+}
+
+/* Todo: vertically center? */
+.item-ais-list .-i {
+  width: clamp(50px, 50%, 100px);
+  aspect-ratio: 1 / 1;
+}
+
+/* -------------------------------------------------------------------------------------------------------- */
+
+/* ### Featured */
+
+.item-fa.-s {
+  width: 100px;
+}
+.item-fa.-m {
+  width: 200px;
+}
+.item-fa.-l {
+  width: 300px;
+}
+
+/* -------------------------------------------------------------------------------------------------------- */
+
+/* ### GLOBAL */
+
+.item-g-divider-line {
+  width: 50%;
+  height: 0.125rem;
+  border: 0 !important;
+  background: rgba(0, 0, 0, 1) !important;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0) 100%
+  ) !important;
+}
+
+.item-g-divider {
+  width: 200px;
+  height: 20px;
+}
+
+/* -------------------------------------------------------------------------------------------------------- */
+
+/* ### MISC */
+
+/**
+ * Trick: Cheat around max-width of Bootstrap by transforming
+ * the container, but resetting it for its content.
+ */
+
+.item-misc-focusbox.-s {
+  transform: scale(1.05, 1.1);
+}
+
+.item-misc-focusbox .-c {
+  transform: scale(0.95, 0.9);
+}
+
+/* Before/After */
+
+div.item-misc-gradient-ba {
+  position: relative;
+}
+
+/**
+ * Margin must be at least the size of gradient, plus additional desired spacing?
+ * Possible gradient overlapping here is intended!
+ */
+div.item-misc-gradient-ba.-b {
+  margin: 2rem auto 0;
+}
+div.item-misc-gradient-ba.-a {
+  margin: 0 auto 2rem;
+}
+
+div.item-misc-gradient-ba.-b::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -2rem;
+  width: 100%;
+  height: 2rem;
+  z-index: 1;
+
+  /* Top direction */
+  background: rgba(0, 0, 0, 0.5);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+div.item-misc-gradient-ba.-a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2rem;
+  width: 100%;
+  height: 2rem;
+  z-index: 1;
+
+  /* Bottom direction */
+  background: rgba(0, 0, 0, 0.5);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+div.item-misc-gradient-ba.-x::before,
+div.item-misc-gradient-ba.-x::after {
+  /**
+   * Width rounding issue? Anything larger shows horizontal browser scrollbar.
+   * Might be different per browser/env, but likely just a rounding issue from transform.
+   */
+  width: 98.31vw;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Full */
+
+div.misc-gradient {
+  background: rgba(0, 0, 0, 1);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 1) 20%,
+    rgba(0, 0, 0, 1) 80%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+div.misc-gradient.-t {
+  background: rgba(0, 0, 0, 1);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 80%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+div.misc-gradient.-b {
+  background: rgba(0, 0, 0, 1);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 80%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+/* -------------------------------------------------------------------------------------------------------- */
+
+/* ### EXPERIMENTS */
+
+.item-xxx .-xxx {
+  width: 50%;
+  aspect-ratio: 1 / 1;
+}
+
+/* ------------------------------------------------------ */
+
+/* Sliders */
+
+.item-sl .-x {
+  overflow-x: scroll;
+  height: 200px;
+}
+
+.item-sl .item:nth-child(2n) {
+  background: #ddd;
+}
+
+/* ------------------------------------------------------ */
+
+/* Sticky */
+
+/* Does not care about content order */
+
+.sticky-stack {
+  border-radius: 1rem;
+  overflow-y: auto;
+}
+
+.sticky-stack h1 {
+  background: #fff;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+/* ====================================================================================================================================== */
+/* =================================================================================================================== CONTENT - TIMELINE */
+/* ====================================================================================================================================== */
+
+/**
+ * @todo Generate variables/values for dynamic item count
+ * - Item count/width, order numbers, column offset
+ *   - Use SASS/CSS-in-JS/JS/Inline styles?
+ */
+
+:root {
+  --item-count: 999;
+}
+
+/* -------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* SYMBOL */
+
+.symbol {
+  background: #999;
+  background: radial-gradient(
+    circle closest-side,
+    rgba(0, 0, 0, 0.25),
+    rgba(0, 0, 0, 0.25) 97%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  background-position: 50% 100%;
+  background-repeat: no-repeat;
+  background-size: 2rem 2rem;
+  width: 2rem;
+  height: 6rem;
+  z-index: 2;
+
+  /* For inner content */
+  position: relative;
+}
+
+/* Position: Take out of flex flow */
+.symbol:before {
+  --scaleA: calc(1.14 * 1rem);
+  --scaleB: calc(1 * 1rem);
+
+  background: #333;
+  content: "";
+  z-index: 1;
+
+  /* top: calc() also fixes small rounding issue */
+  /**/
+  -webkit-clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+          clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  width: var(--scaleB);
+  height: var(--scaleA);
+  left: calc(50% - var(--scaleB) / 2);
+  top: calc(100% - var(--scaleA) - var(--scaleA) / 2 + 0.14rem);
+  /**/
+
+  /** /
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  width: var(--scaleA);
+  height: var(--scaleB);
+  left: calc(50% - var(--scaleA) / 2);
+  top: calc(100% - var(--scaleB) - var(--scaleB) / 2);
+  /**/
+
+  position: absolute;
+}
+
+.symbol:after {
+  /* 25% of Hexagon size */
+  --itemWidth: calc((1.14 * 1rem) / 5);
+
+  content: "";
+  width: var(--itemWidth);
+  height: 75%;
+  position: absolute;
+
+  /* Center item and fix rounding issue */
+  /* Vertical offset ^= Polygon height */
+  left: calc(50% - var(--itemWidth) / 2);
+}
+
+.symbol:after {
+  bottom: 1rem;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(255, 0, 0, 0) 100%
+  );
+}
+
+.symbol .val {
+  position: absolute;
+}
+
+.symbol.-down {
+  transform: rotate(180deg);
+}
+.symbol.-down .val {
+  transform: rotate(-180deg);
+}
+
+/* Sizing issues appear | Text not needed on mobile */
+.symbol.-right {
+  transform: rotate(90deg);
+}
+.symbol.-right {
+  transform: rotate(90deg) translate(100%, 0);
+}
+.symbol.-right .val {
+  transform: rotate(-90deg);
+}
+.symbol.-right .val {
+  display: none;
+}
+
+/* -------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* MOBILE */
+
+@media only screen and (max-width: 991.98px) {
+  .timeline .item {
+    position: relative;
+    margin-bottom: 20px;
+    padding: 1rem;
+    padding-left: 75px;
+  }
+
+  .timeline .item::before {
+    content: "";
+    background: #999;
+    width: 50px;
+    height: 10px;
+    position: absolute;
+    left: -5px;
+    top: -5px;
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  }
+
+  .timeline .-o1 {
+    order: 1;
+  }
+  .timeline .-o2 {
+    order: 2;
+  }
+  .timeline .-o3 {
+    order: 3;
+  }
+  .timeline .-o4 {
+    order: 4;
+  }
+  .timeline .-o5 {
+    order: 5;
+  }
+  .timeline .-o6 {
+    order: 6;
+  }
+  .timeline .-o7 {
+    order: 7;
+  }
+  .timeline .-o8 {
+    order: 8;
+  }
+  .timeline .-o9 {
+    order: 9;
+  }
+
+  .-empty {
+    display: none;
+  }
+}
+
+/* -------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* DESKTOP */
+
+@media only screen and (min-width: 992px) {
+  .timeline {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    box-sizing: border-box;
+  }
+
+  /**
+   * Formulas
+   *
+   * Setup
+   * - Specs
+   *   - Columns           = 11
+   *   - Items/Row         = 5
+   *   - Offset            = 1 (2 x 0.5)
+   *   - Items space / Row = 5.5
+   *
+   * width
+   * - Total grid with including all items (scrollable)
+   *   - N% = Item width
+   *   - *N = Stretch items
+   *
+   * repeat
+   * - Desired visible columns * 2 + 1)
+   *   - ^= Total content + 1
+   *   - +1 Needed for offset
+   */
+  .timeline .d-grid {
+    --item-width: 30%;
+
+    /* Demo examples */
+    /* width: calc(20% * 6); */
+    width: calc(var(--item-width) * 5.5);
+
+    grid-template-columns: repeat(11, 1fr);
+    /* overflow-x: scroll; */
+
+    box-sizing: border-box;
+  }
+
+  /**
+   * Desktop only intent:
+   * - Offset content by 1/4-th of item width
+   *   to align text more to left side (design reasons)
+   *  - See 'width' setting of 'd-grid'
+   */
+  .timeline .d-grid {
+    --item-width: 30%;
+
+    margin-left: calc(-1 * var(--item-width) / 4);
+  }
+
+  /* Items */
+
+  .timeline .item {
+    grid-column: span 2;
+    min-height: 150px;
+    padding: 1rem;
+
+    /* Don't set width here, it breaks scroll ability */
+    /* min-width: 200px; */
+
+    box-sizing: border-box;
+  }
+
+  /* Issue: Hardcoded values */
+  /* Needed for proper offsetting */
+  .timeline .item.-b1 {
+    grid-column: 2 / span 2;
+  }
+  .timeline .item.-b2 {
+    grid-column: 4 / span 2;
+  }
+  .timeline .item.-b3 {
+    grid-column: 6 / span 2;
+  }
+  .timeline .item.-b4 {
+    grid-column: 8 / span 2;
+  }
+  .timeline .item.-b5 {
+    grid-column: 10 / span 2;
+  }
+
+  /* Borders */
+
+  /**
+   * Trick: Have overlapping borders on top/bottom parts, which is needed for start of timeline.
+   *
+   * Technical notes
+   * - Intended to apply to first item only
+   *   - Changing this would lead to inconsistent math in other parts,
+   *     so we accept the double border for other code being simpler instead
+   * - Margin/Padding don't shift content correctly inwards, so border has to be used
+   *
+   */
+  .timeline .-row-0 {
+    border-bottom: 10px solid #999;
+  }
+
+  .timeline .-row-1 {
+    border-top: 10px solid #999;
+    margin-top: -10px;
+  }
+
+  /* Gradients */
+
+  .timeline .item {
+    position: relative;
+    box-sizing: border-box;
+  }
+
+  /* Option: Additional gradient * /
+  .timeline .item::before {
+    content: "";
+    background: #999;
+    width: 10px;
+    height: 50px;
+    position: absolute;
+    background: linear-gradient(0, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+    z-index: 1;
+  }
+
+  .timeline .-row-0::before {
+    left: -5px;
+    bottom: -10px;
+  }
+
+  .timeline .-row-1::before {
+    left: -5px;
+    top: -10px;
+    transform: rotate(180deg);
+  }
+  /**/
+
+  /* Text */
+
+  .timeline .-d {
+    background: radial-gradient(
+      circle closest-side,
+      rgba(0, 0, 0, 0.25),
+      rgba(0, 0, 0, 0.25) 97%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    background-repeat: no-repeat;
+    background-size: 2rem 2rem;
+    width: 2rem;
+    height: 6rem;
+    position: absolute;
+    z-index: 2;
+    text-align: center;
+
+    /* Only without <span> * /
+    display: flex;
+    justify-content: center;
+    /**/
+
+    /* ^= 50% item height */
+    /* MOBILE * /
+    transform: rotate(0);
+    transform: rotate(90deg);
+    transform-origin: 1rem calc(100% - 1rem);
+    /**/
+  }
+
+  .timeline .-d span {
+    position: absolute;
+    transform: translate(-50%, 0);
+    background: #fff;
+
+    /* MOBILE * /
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+    transform-origin: 0 0.75rem;
+    /* */
+  }
+
+  .timeline .-row-0 .-d span {
+    top: 0;
+    left: 50%;
+  }
+
+  .timeline .-row-1 .-d span {
+    bottom: 0;
+    left: 50%;
+  }
+
+  /* Formula 1: 50% item width */
+  /* Formula 2: Border height */
+  .timeline .-row-0 .-d {
+    background-position: 50% 100%;
+    left: -1rem;
+    bottom: -20px;
+  }
+
+  .timeline .-row-1 .-d {
+    background-position: 50% 0;
+    left: -1rem;
+    top: -20px;
+    align-items: flex-end;
+  }
+
+  /* POLYGON */
+
+  /* Position: Take out of flex flow */
+  .timeline .-d:before {
+    background: #333;
+    position: absolute;
+    content: "";
+    z-index: 1;
+    width: calc(1.14 * 1rem);
+    height: calc(1 * 1rem);
+    /** / clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%); /**/
+    /**/
+    -webkit-clip-path: polygon(
+      25% 0%,
+      75% 0%,
+      100% 50%,
+      75% 100%,
+      25% 100%,
+      0% 50%
+    );
+            clip-path: polygon(
+      25% 0%,
+      75% 0%,
+      100% 50%,
+      75% 100%,
+      25% 100%,
+      0% 50%
+    ); /**/
+  }
+
+  .timeline .-row-0 .-d:before {
+    --parentItemWidth: 2rem;
+    --parentItemHeight: 2rem;
+    --itemWidth: calc(1.14 * 1rem);
+    --itemHeight: calc(1 * 1rem);
+
+    /* Center item and fix rounding issue */
+    /** /
+    left: calc(var(--parentItemWidth) / 2 - var(--itemWidth) / 2 - 1px);
+    bottom: calc(var(--parentItemHeight) / 2 - var(--itemHeight) / 2 - 0.5px);
+    /**/
+
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, -46%);
+  }
+
+  .timeline .-row-1 .-d:before {
+    left: 0.4rem;
+    top: 0.5rem;
+  }
+
+  /* LINE GRADIENT */
+
+  .timeline .-d:after {
+    --itemWidth: 4px;
+
+    content: "";
+    width: var(--itemWidth);
+    height: 75%;
+    position: absolute;
+
+    /* Center item and fix rounding issue */
+    /* Vertical offset ^= Polygon height */
+    left: calc(50% - var(--itemWidth) / 2 - 0.5px);
+  }
+
+  .timeline .-row-0 .-d:after {
+    bottom: 1rem;
+    background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(255, 0, 0, 0) 100%
+    );
+  }
+
+  .timeline .-row-1 .-d:after {
+    top: 1rem;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(255, 0, 0, 0) 100%
+    );
+  }
+
+  /* Spacer */
+
+  .timeline .-empty::before,
+  .timeline .-empty::after {
+    background: none;
+  }
+}
+
+/* ====================================================================================================================================== */
+/* =============================================================================================================================== LAYOUT */
+/* ====================================================================================================================================== */
+
+html,
+body {
+  font-family: sans-serif;
+}
+
+body {
+  width: 95vw;
+  margin: 1rem auto;
+}
+
+/* Sections */
+
+h1 {
+  color: #ddd;
+  border-bottom: 1px solid #aaa;
+  padding: 1rem 0;
+  margin: 5rem 0 2.5rem;
+}
+
+h2 {
+  color: #666;
+  padding: 1rem 0;
+  margin: 2.5rem 0 1rem;
+}
+
+h3,
+h4 {
+  color: #666;
+  padding: 0.5rem 0;
+  margin: 1rem 0 0.5rem;
+}
+
+.text-xxx {
+  color: #000;
+}
+
+/* Content */
+
+div[class*="item"] {
+  background: #eee;
+  border: 1px solid #333;
+}
+
+body > .container {
+  margin-bottom: 2rem;
+}

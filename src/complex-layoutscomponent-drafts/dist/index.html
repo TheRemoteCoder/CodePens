@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Complex layouts - Component drafts</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<h1>Layout experiments and drafts</h1>
+<p>
+  Explore this collection of complex, custom feature drafts. Given the
+  conceptual nature of the source, it lacks testing, code quality, and
+  proper naming. While these drafts can provide inspiration, it's advised to
+  use it as reference and not 1:1 copy.
+</p>
+
+<!-- =============================================================================================================================== -->
+
+<h2>Fixed header</h2>
+
+<p>
+  <em>(see page top)</em>
+</p>
+
+<div class="item-fixed w-100 position-fixed">Fixed header</div>
+
+<!-- =============================================================================================================================== -->
+
+<h2>Nested containers</h2>
+
+<!-- -->
+<div class="item-containers container container-fluid w-50 g-0">
+  <div class="row justify-content-center">
+    <div class="item container">Text</div>
+    <div class="item container-xl">Text</div>
+    <div class="item w-50">Text</div>
+    <div class="item d-flex mx-auto -c">Text</div>
+  </div>
+</div>
+
+<div class="item-containers -cc">
+  <div class="d-flex -cr flex-wrap justify-content-center w-50 mx-auto">
+    <div class="item container">Text</div>
+    <div class="item container-xl">Text</div>
+    <div class="item w-50">Text</div>
+    <div class="item d-flex mx-auto -c">Text</div>
+  </div>
+</div>
+
+<!-- =============================================================================================================================== -->
+
+<h2>Popout</h2>
+
+<!-- Relative to any container, will overlap any content -->
+<div class="item item-popout container">
+  <div class="row">
+    <div class="col">Text <br /><br /><br /></div>
+  </div>
+  <div class="row item -pr">
+    <div class="col">
+      Text <br /><br /><br />
+      <div class="item -p -p1"></div>
+    </div>
+  </div>
+  <div class="item -p -p2"></div>
+</div>
+
+<!-- =============================================================================================================================== -->
+
+<h2>Footer</h2>
+
+<!-- Use 11/12 columns, leave intentional gap -->
+<div class="item container">
+  <nav class="row">
+    <div class="col-md-3">
+      <h2>Title</h2>
+      <p>Text</p>
+      <div>Icons</div>
+    </div>
+    <div class="col-md-2">
+      <h2>Text</h2>
+      <ul>
+        <li>Item</li>
+        <li>Item</li>
+        <li>Item</li>
+      </ul>
+    </div>
+    <div class="col-md-2">
+      <h2>Text</h2>
+      <ul>
+        <li>Item</li>
+        <li>Item</li>
+        <li>Item</li>
+        <li>Item</li>
+      </ul>
+    </div>
+    <div class="col-md-2">
+      <h2>Text</h2>
+      <ul>
+        <li>Item</li>
+        <li>Item</li>
+      </ul>
+    </div>
+    <div class="col-md-2 text-break">
+      <h2>Text</h2>
+      <ul>
+        <li>ItemNameVeryLong</li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<!-- =============================================================================================================================== -->
+
+<h2>People / Teams</h2>
+
+<div class="item container">
+  <div class="row mb-3">
+    <div class="item col-md-6 text-center">
+      <div class="mx-auto w-50">
+        Image
+        <br /><br /><br /><br />
+      </div>
+    </div>
+    <div class="item col-md-6 d-flex flex-column justify-content-center">
+      <div>Title</div>
+      <div>Link</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="item col">Text</div>
+  </div>
+</div>
+
+<!-- =============================================================================================================================== -->
+
+<h2>Roadmaps / Timelines</h2>
+
+<div class="item container p-5">
+  <div class="d-flex gap-5">
+    <div class="symbol -up">
+      <span class="val">ABC</span>
+    </div>
+    <div class="symbol -down">
+      <span class="val">ABC</span>
+    </div>
+    <div class="symbol -right">
+      <span class="val">ABC</span>
+    </div>
+  </div>
+</div>
+
+<br />
+<br />
+
+<div class="timeline container">
+  <div class="d-grid">
+    <div class="item -row-0 -o0 -empty">EMPTY</div>
+    <div class="item -row-0 -o1">
+      <div class="-d"><span>1</span></div>
+      <div>Grid item 1</div>
+    </div>
+    <div class="item -row-0 -o3">
+      <div class="-d"><span>2</span></div>
+      <div>Grid item 2</div>
+    </div>
+    <div class="item -row-0 -o5">
+      <div class="-d"><span>3</span></div>
+      <div>Grid item 3</div>
+    </div>
+    <div class="item -row-0 -o7">
+      <div class="-d"><span>4</span></div>
+      <div>Grid item 4</div>
+    </div>
+    <div class="item -row-1 -b1 -o9 -empty">EMPTY</div>
+    <div class="item -row-1 -b2 -o2">
+      <div class="-d"><span>6</span></div>
+      <div>Grid item 6</div>
+    </div>
+    <div class="item -row-1 -b3 -o4">
+      <div class="-d"><span>7</span></div>
+      <div>Grid item 7</div>
+    </div>
+    <div class="item -row-1 -b4 -o6">
+      <div class="-d"><span>8</span></div>
+      <div>Grid item 8</div>
+    </div>
+    <div class="item -row-1 -b5 -o8">
+      <div class="-d"><span>9</span></div>
+      <div>Grid item 9</div>
+    </div>
+  </div>
+</div>
+
+<!-- =============================================================================================================================== -->
+
+<h2>Roadmaps (Variants)</h2>
+
+<h3>Vertical</h3>
+
+<div class="item-tv container">
+  <div class="row">
+    <div class="item d-flex">
+      <div>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+        eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </div>
+    </div>
+    <div class="item d-flex">
+      <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+    </div>
+    <div class="item d-flex">
+      <div>
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+        nisi ut aliquip ex ea commodo consequat.
+      </div>
+    </div>
+    <div class="item d-flex">
+      <div>...</div>
+    </div>
+  </div>
+</div>
+
+<h3>Horizontal + Grid 2 - Offset - Mobile</h3>
+
+<!-- Issue: Hardcoded values -->
+
+<div class="item-thg2om container">
+  <div class="d-grid gap-0">
+    <div class="item -o1 p-2">Grid item 0</div>
+    <div class="item -o3 p-2">Grid item 1</div>
+    <div class="item -o5 p-2">Grid item 2</div>
+    <div class="item -o7 p-2">Grid item 3</div>
+    <div class="item -o9 p-2">Grid item 4</div>
+    <div class="item -o2 p-2">Grid item 5</div>
+    <div class="item -o4 p-2">Grid item 6</div>
+    <div class="item -o6 p-2">Grid item 7</div>
+    <div class="item -o8 p-2">Grid item 8</div>
+    <div class="item -o10 p-2">Grid item 9</div>
+  </div>
+</div>
+
+<h3>Horizontal - Grid 2 - Offset - Desktop</h3>
+
+<!-- Issue: Hardcoded values -->
+
+<div class="item-thg2o container">
+  <div class="d-grid gap-0">
+    <div class="item -it p-2">Grid item 0</div>
+    <div class="item -ib p-2">Grid item 1</div>
+    <div class="item -it p-2">Grid item 2</div>
+    <div class="item -ib p-2">Grid item 3</div>
+    <div class="item -it p-2">Grid item 4</div>
+    <div class="item -b1 -ib p-2">Grid item 5</div>
+    <div class="item -b2 -it p-2">Grid item 6</div>
+    <div class="item -b3 -ib p-2">Grid item 7</div>
+    <div class="item -b4 -it p-2">Grid item 8</div>
+    <div class="item -b5 -ib p-2">Grid item 9</div>
+  </div>
+</div>
+
+<h3>Horizontal - Grid 2 - Offset - Desktop (Full)</h3>
+
+<!-- Issue: Hardcoded values -->
+
+<div class="item-thg2of container">
+  <div class="d-grid gap-0">
+    <div class="item -r0 -it p-2 -empty">
+      <!--
+      <div class="-d">0</div>
+      <div>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </div>
+      -->
+    </div>
+    <div class="item -r0 -ib p-2">
+      <div class="-d">1</div>
+      <div>Grid item 1</div>
+    </div>
+    <div class="item -r0 -it p-2">
+      <div class="-d">22</div>
+      <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+    </div>
+    <div class="item -r0 -ib p-2">
+      <div class="-d">3</div>
+      <div>Grid item 3</div>
+    </div>
+    <div class="item -r0 -it p-2">
+      <div class="-d">4</div>
+      <div>Grid item 4</div>
+    </div>
+    <div class="item -r1 -b1 -ib p-2">
+      <div class="-d">5</div>
+      <div>Grid item 5</div>
+    </div>
+    <div class="item -r1 -b2 -it p-2">
+      <div class="-d">6</div>
+      <div>Grid item 6</div>
+    </div>
+    <div class="item -r1 -b3 -ib p-2">
+      <div class="-d">7</div>
+      <div>Grid item 7</div>
+    </div>
+    <div class="item -r1 -b4 -it p-2">
+      <div class="-d">888</div>
+      <div>Ut enim ad minim veniam, quis nostrud exercitation ullamco.</div>
+    </div>
+    <div class="item -r1 -b5 -ib p-2">
+      <div class="-d">9</div>
+      <div>Grid item 9</div>
+    </div>
+  </div>
+</div>
+
+<h3>Horizontal - Grid 2 Mobile</h3>
+
+<!-- Similar to Desktop, just a few classes + styles to exchange -->
+
+<div class="item-thg2m container">
+  <div class="d-grid gap-0">
+    <div class="item p-2">Grid item 0</div>
+    <div class="item p-2 -fe">
+      Grid item 1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+      enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+      ut aliquip ex ea commodo consequat.
+    </div>
+    <div class="item p-2">Grid item 2</div>
+    <div class="item p-2 -fe">Grid item 3</div>
+    <div class="item p-2">Grid item 4</div>
+    <div class="item p-2 -fe">
+      Grid item 5 - Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+      enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+      ut aliquip ex ea commodo consequat.
+    </div>
+    <div class="item p-2">Grid item 6</div>
+    <div class="item p-2 -fe">
+      Grid item 7 - Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+      enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+      ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet,
+      consectetur adipiscing elit.
+    </div>
+    <div class="item p-2">Grid item 8</div>
+    <div class="item p-2 -fe">Grid item 9</div>
+  </div>
+</div>
+
+<h3>Horizontal - Grid 2 Desktop</h3>
+
+<div class="item-thg2 container">
+  <div class="d-grid gap-0 -z">
+    <div class="item -b p-2 pb-5 align-self-stretch">
+      Grid item 0 - STRETCHED
+    </div>
+    <div class="item -b p-2 pb-5">
+      Grid item 1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+      enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+      ut aliquip ex ea commodo consequat.
+    </div>
+    <div class="item -b p-2 pb-5 align-self-end">Grid item 2</div>
+    <div class="item -b p-2 pb-5 align-self-end">Grid item 3</div>
+    <div class="item -b p-2 pb-5 align-self-end">Grid item 4</div>
+    <div class="item -t p-2 pt-5">
+      Grid item 5 - Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+      enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+      ut aliquip ex ea commodo consequat.
+    </div>
+    <div class="item -t p-2 pt-5">Grid item 6</div>
+    <div class="item -t p-2 pt-5">
+      Grid item 7 - Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+      enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+      ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet,
+      consectetur adipiscing elit.
+    </div>
+    <div class="item -t p-2 pt-5">Grid item 8</div>
+    <div class="item -t p-2 pt-5">Grid item 9</div>
+  </div>
+</div>
+
+<h3>Horizontal - Grid 1</h3>
+
+<div class="item-thg container">
+  <div class="d-grid gap-3">
+    <div class="item p-2">Grid item 0</div>
+    <div class="item p-2">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+      minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+      aliquip ex ea commodo consequat.
+    </div>
+    <div class="item p-2">Grid item 2</div>
+    <div class="item p-2">Grid item 3</div>
+    <div class="item p-2">Grid item 4</div>
+    <div class="item p-2">Grid item 5</div>
+    <div class="item p-2">Grid item 6</div>
+    <div class="item p-2">Grid item 7</div>
+    <div class="item p-2">Grid item 8</div>
+    <div class="item p-2">Grid item 9</div>
+  </div>
+</div>
+
+<h3>Horizontal</h3>
+
+<div class="item-th container">
+  <div class="row flex-nowrap -z">
+    <div class="item d-flex align-items-start -b">
+      <div class="-d">1</div>
+      <div>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+        eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </div>
+    </div>
+    <div class="item d-flex align-self-end -t">
+      <div class="-d">22</div>
+      <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+    </div>
+    <div class="item d-flex align-items-start -b">
+      <div class="-d">333</div>
+      <div>
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+        nisi ut aliquip ex ea commodo consequat.
+      </div>
+    </div>
+    <div class="item d-flex align-self-end -t">...</div>
+    <div class="item d-flex align-items-start -b">...</div>
+    <div class="item d-flex align-self-end align-items-start -t me-2">
+      ...
+    </div>
+  </div>
+</div>
+
+<h3>Further variants</h3>
+
+<!--
+Todo: Find best way to have similar layout Desktop/Mobile
+-->
+
+<div class="item container">
+  <div class="row flex-row flex-row">
+    <div class="item col d-flex order-1">
+      <div class="row w-100">
+        <div class="col-12">Text 1</div>
+        <div class="col-12">Text 1</div>
+        <div class="col-12">Text 1</div>
+        <div class="col-12">Text 1</div>
+      </div>
+    </div>
+    <div class="item col d-flex">
+      <div class="row w-100">
+        <div class="col-12">Timeline</div>
+        <div class="col-12">Timeline</div>
+        <div class="col-12">Timeline</div>
+        <div class="col-12">Timeline</div>
+      </div>
+    </div>
+    <div class="item col d-flex order-2">
+      <div class="row w-100">
+        <div class="col-12">Text 2</div>
+        <div class="col-12">Text 2</div>
+        <div class="col-12">Text 2</div>
+        <div class="col-12">Text 2</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="item container">
+  <div class="row flex-column">
+    <div class="item col d-flex">
+      <div class="row w-100">
+        <div class="col">Text 1</div>
+        <div class="col">Text 1</div>
+        <div class="col">Text 1</div>
+        <div class="col">Text 1</div>
+      </div>
+    </div>
+    <div class="item col d-flex">
+      <div class="row w-100">
+        <div class="col">Timeline</div>
+        <div class="col">Timeline</div>
+        <div class="col">Timeline</div>
+        <div class="col">Timeline</div>
+      </div>
+    </div>
+    <div class="item col d-flex">
+      <div class="row w-100">
+        <div class="col">Text 2</div>
+        <div class="col">Text 2</div>
+        <div class="col">Text 2</div>
+        <div class="col">Text 2</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="item container">
+  <div class="row flex-row-reverse">
+    <div class="item col d-flex">Text 1</div>
+    <div class="item col d-flex order-1">Timeline</div>
+    <div class="item col d-flex">Text 2</div>
+  </div>
+</div>
+
+<!-- Issues: Does not look as intended; Column/ row setups are not suited for custom widths -->
+<div class="item-r container">
+  <div class="item-g-divider mb-3 mx-auto"></div>
+  <h2 class="h2 p-0 text-center text-uppercase">Title</h2>
+  <div class="item-g-divider-line mb-3 mx-auto"></div>
+  <h2 class="h3 p-0 text-center">Subtitle</h2>
+
+  <div class="-s">
+    <div class="row d-flex flex-nowrap mb-3 px-3 -c">
+      <div class="item d-flex flex-column col p-2 -i2 -ix">
+        <div class="-t">XXX XXX XXX XXX XXX XXX</div>
+        <div class="-d mt-auto">1111</div>
+      </div>
+      <div class="item d-flex flex-column col p-2 -i2 -ix">
+        <div class="-t">XXX</div>
+        <div class="-d mt-auto">2222</div>
+      </div>
+      <div class="item col -i2 -ix">3</div>
+    </div>
+  </div>
+</div>
+
+<!-- Issue: Does not look as intended; Column/ row setups are not suited for custom widths -->
+<div class="item-r container">
+  <div class="item-g-divider mb-3 mx-auto"></div>
+  <h2 class="h2 p-0 text-center text-uppercase">Title</h2>
+  <div class="item-g-divider-line mb-3 mx-auto"></div>
+  <h2 class="h3 p-0 text-center">Subtitle</h2>
+
+  <div class="-s">
+    <div class="row d-flex flex-nowrap mb-3 -c">
+      <div class="item col -i2">
+        <div class="-t">
+          XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX XXX XXX XXX
+          XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX
+          XXX XXX XXX XXX XXX XXX XXX
+        </div>
+        <div class="-d">1111</div>
+      </div>
+      <div class="item col -i2">2</div>
+      <div class="item col -i2">3</div>
+      <div class="item col -i2">4</div>
+      <div class="item col -i2">5</div>
+      <div class="item col -i2">X</div>
+      <div class="item col -i2">X</div>
+      <div class="item col -i2">X</div>
+      <div class="item col -i2">X</div>
+      <div class="item col -i2">X</div>
+      <div class="item col -i2">X</div>
+      <div class="item col -i2">X</div>
+      <div class="item col -i2">X</div>
+    </div>
+  </div>
+</div>
+
+<!-- Issues: Smallest size too less for any content; Column/ row setups are not suited for custom widths -->
+<div class="item-r container">
+  <div class="item-g-divider mb-3 mx-auto"></div>
+  <h2 class="h2 p-0 text-center text-uppercase">Title</h2>
+  <div class="item-g-divider-line mb-3 mx-auto"></div>
+  <h2 class="h3 p-0 text-center">Subtitle</h2>
+
+  <div class="-s">
+    <div class="row d-flex flex-nowrap mb-3 -c">
+      <div class="item col -i1">
+        <div class="-t">
+          XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX XXX XXX XXX
+          XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX
+          XXX XXX XXX XXX XXX XXX XXX
+        </div>
+        <div class="-d">1111</div>
+      </div>
+      <div class="item col -i1">2</div>
+      <div class="item col -i1">3</div>
+      <div class="item col -i1">4</div>
+      <div class="item col -i1">5</div>
+      <div class="item col -i1">X</div>
+      <div class="item col -i1">X</div>
+      <div class="item col -i1">X</div>
+      <div class="item col -i1">X</div>
+      <div class="item col -i1">X</div>
+      <div class="item col -i1">X</div>
+      <div class="item col -i1">X</div>
+      <div class="item col -i1">X</div>
+    </div>
+  </div>
+</div>
+
+<!-- =============================================================================================================================== -->
+
+<h2>Data visualisation + Description</h2>
+
+<div class="item-ta container g-0">
+  <div class="row">
+    <div class="col-md-6 d-flex flex-column mb-3 mb-md-0">
+      <div class="item">Title</div>
+      <div class="item">Text</div>
+      <div class="item mt-auto">
+        Image <br />
+        (always at bottom)
+      </div>
+    </div>
+    <div class="col-md-6">
+      <!-- h-100 : Prevents any other content in this column! -->
+      <div
+        class="item d-flex align-items-center justify-content-center h-100"
+      >
+        <div class="item -g">Graph</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =============================================================================================================================== -->
+
+<h2>Collections</h2>
+
+<h3>Items</h3>
+
+<div class="item container g-0">
+  <div class="d-flex justify-content-evenly">
+    <div class="item d-flex me-2 flex-column">
+      <div class="-i">Image</div>
+      <div class="-t">Title</div>
+      <div class="-t">Text</div>
+    </div>
+    <div class="item d-flex me-2 flex-column">
+      <div class="-i">Image</div>
+      <div class="-t">Title</div>
+      <div class="-t">Text</div>
+    </div>
+    <div class="item d-flex me-2 flex-column">
+      <div class="-i">Image</div>
+      <div class="-t">Title</div>
+      <div class="-t">Text</div>
+    </div>
+  </div>
+</div>
+
+<h3>Nav</h3>
+
+<!--
+Todo: Find a way for 'wrap-if' conditions: Wrap if elements of one
+navigation exceed a certain width (e.g. due to dynamic item count).
+-->
+<div class="item container g-0">
+  <div
+    class="d-flex flex-column flex-md-row align-items-center align-items-md-start"
+  >
+    <div class="d-flex flex-row mb-3 my-md-0">
+      <div class="item p-2">Nav 1.1</div>
+      <div class="item p-2">Nav 1.2</div>
+      <div class="item p-2">Nav 1.3</div>
+      <div class="item p-2">Nav 1.4</div>
+      <div class="item p-2">Nav 1.5</div>
+      <div class="item p-2">Nav 1.6</div>
+      <div class="item p-2">Nav 1.7</div>
+      <div class="item p-2">...</div>
+      <div class="item p-2">
+        XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX
+        XXX XXX XXX XXX XXX XXX XXX XXX XXX
+      </div>
+    </div>
+    <div class="d-flex ms-md-auto flex-row">
+      <div class="item p-2">Nav 2.1</div>
+      <div class="item p-2">Nav 2.2</div>
+      <div class="item p-2">Nav 2.3</div>
+    </div>
+  </div>
+</div>
+
+<!-- Unused? -->
+<div class="item container g-0">
+  <div class="d-flex justify-content-center flex-wrap">
+    <div class="d-flex mb-3 my-md-0">
+      <div class="item p-2">Nav 1.1</div>
+      <div class="item p-2">Nav 1.2</div>
+      <div class="item p-2">Nav 1.3</div>
+      <div class="item p-2">Nav 1.4</div>
+      <div class="item p-2">Nav 1.4</div>
+      <div class="item p-2">Nav 1.4</div>
+      <div class="item p-2">Nav 1.4</div>
+      <div class="item p-2">Nav 1.4</div>
+      <div class="item p-2">
+        XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX
+        XXX XXX XXX XXX XXX XXX XXX XXX XXX
+      </div>
+    </div>
+    <div class="d-flex">
+      <div class="item p-2">Nav 2.1</div>
+      <div class="item p-2">Nav 2.2</div>
+      <div class="item p-2">Nav 2.3</div>
+    </div>
+  </div>
+</div>
+
+<!-- =============================================================================================================================== -->
+
+<h2>About / Specs</h2>
+
+<div class="item-ais container p-2 p-md-3">
+  <div class="row gx-5 gy-4">
+    <div class="col-md-6">
+      <div class="item">Title</div>
+      <div class="item mb-3">
+        <div class="item p-2">
+          XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX
+          XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX
+        </div>
+      </div>
+      <div class="item">Media</div>
+    </div>
+    <div class="col-md-6">
+      <div class="item">List <br /><br /><br /><br /></div>
+    </div>
+  </div>
+</div>
+
+<div class="item container p-2 p-md-3">
+  <div class="row align-items-center g-0 mb-3">
+    <div class="col-2">
+      <div class="item d-flex">Icon</div>
+    </div>
+    <div class="col-10">
+      <div class="item">Title</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-10 offset-2">
+      <div class="item">
+        XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX
+        XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX
+        XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX
+        XXX
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =============================================================================================================================== -->
+
+<h2>Logos / Certificates / Awards</h2>
+
+<div class="container">
+  <div class="item-fa-divider mb-3 mx-auto"></div>
+  <h2 class="h2 text-center text-uppercase">Title</h2>
+  <div class="d-flex flex-wrap justify-content-md-center">
+    <div class="item-fa m-2 -s">1</div>
+    <div class="item-fa m-2 -l">2</div>
+    <div class="item-fa m-2 -s">3</div>
+    <div class="item-fa m-2 -m">4</div>
+    <div class="item-fa m-2 -s">XXX XXX XXX XXX XXX XXX</div>
+    <div class="item-fa m-2 -s">1</div>
+    <div class="item-fa m-2 -l">2</div>
+    <div class="item-fa m-2 -s">3</div>
+    <div class="item-fa m-2 -m">4</div>
+    <div class="item-fa m-2 -s">5</div>
+  </div>
+</div>
+
+<!-- =============================================================================================================================== -->
+
+<h2>Teaser / Hero</h2>
+
+<!-- Left col: Alignment looks wrong, but is intended in this case -->
+<div class="container">
+  <div class="row align-items-center">
+    <div class="col-lg-6">
+      <div class="item-hero mt-lg-3">
+        1 <br />
+        <br />
+      </div>
+    </div>
+    <div class="col-lg-6 d-flex justify-content-center">
+      <div class="item-hero">2</div>
+    </div>
+  </div>
+</div>
+
+<!-- =============================================================================================================================== -->
+
+<h2 class="text-xxx">MISC</h2>
+
+<h3 class="text-xxx">Focus box</h3>
+
+<div class="item misc-focusbox container -s">
+  <div class="row p-1">
+    <div class="item col -c">
+      CSS Transform container, reset for content <br />
+      Note the quality loss due to rendering issues (acceptable?) <br />
+    </div>
+  </div>
+</div>
+
+<div class="item misc-focusbox container">
+  <div class="row p-1">
+    <div class="item col">
+      No transforms <br />
+      Original for comparison <br />
+    </div>
+  </div>
+</div>
+
+<h3 class="text-xxx">Gradients</h3>
+
+<h4 class="text-xxx">Before/After</h4>
+<br />
+
+<div class="item-misc-gradient-ba -b -a container"><br /><br /></div>
+<br />
+
+<div class="item-misc-gradient-ba -b container"><br /><br /></div>
+<br />
+
+<div class="item-misc-gradient-ba -a container"><br /><br /></div>
+
+<br />
+<h4 class="text-xxx">Overlapping</h4>
+<br /><br />
+
+<div class="container">
+  <div class="item-misc-gradient-ba -b -a"><br /><br /></div>
+  <div class="item-misc-gradient-ba -b"><br /><br /></div>
+  <div class="item-misc-gradient-ba -a"><br /><br /></div>
+</div>
+
+<br />
+<h4 class="text-xxx">Fullscreen</h4>
+<br /><br />
+
+<div class="container">
+  <div class="item-misc-gradient-ba -b -a -x"><br /><br /></div>
+  <div class="item-misc-gradient-ba -b -x"><br /><br /></div>
+  <div class="item-misc-gradient-ba -a -x"><br /><br /></div>
+</div>
+
+<br />
+<h3 class="text-xxx">Full</h3>
+
+<!--
+Issues: Gradient area scales with element size, which can be undesired
+-->
+
+<div class="misc-gradient container"><br /><br /></div>
+
+<div class="misc-gradient container -t"><br /><br /><br /><br /></div>
+
+<div class="misc-gradient container -b">
+  <br /><br /><br /><br /><br /><br />
+</div>
+
+<!-- =============================================================================================================================== -->
+
+<h2 class="text-xxx">EXPERIMENTS</h2>
+
+<h3>Sliders</h3>
+
+<div class="item-sl container">
+  <div class="row flex-nowrap -x">
+    <div class="item w-50">1</div>
+    <div class="item w-50">2</div>
+    <div class="item w-50">3</div>
+    <div class="item w-50">4</div>
+  </div>
+</div>
+
+<div class="item-sl container">
+  <div class="row flex-nowrap -x">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+  </div>
+</div>
+
+<h3>Pop-out</h3>
+<br /><br /><br />
+
+<div class="item-xxx container g-0">
+  <div class="row">
+    <div class="col-6">
+      <div
+        class="item d-flex align-items-center justify-content-center h-50"
+      >
+        <div class="item -xxx"></div>
+      </div>
+    </div>
+    <div class="col-6 p-5">
+      Element pops out of box, centered both X and Y. This is a result of
+      enforcing aspect ratio.
+    </div>
+  </div>
+</div>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
